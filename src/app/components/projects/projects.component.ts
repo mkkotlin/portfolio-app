@@ -259,6 +259,19 @@ import { PORTFOLIO_DATA, Project } from '../../data/portfolio-data';
               </a>
 
               <a 
+                *ngIf="project.videoDemoUrl"
+                [href]="project.videoDemoUrl" 
+                target="_blank" 
+                rel="noopener"
+                class="px-3 py-2 rounded-xl bg-red-950/80 hover:bg-red-900 border border-red-500/40 text-red-300 hover:text-red-200 text-xs font-mono font-medium transition-all flex items-center gap-1.5 shadow-sm"
+              >
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+                Video Demo
+              </a>
+
+              <a 
                 *ngIf="project.apiDocsUrl"
                 [href]="project.apiDocsUrl" 
                 target="_blank" 
@@ -364,6 +377,19 @@ import { PORTFOLIO_DATA, Project } from '../../data/portfolio-data';
               class="px-4 py-2 rounded-xl bg-slate-900 border border-white/10 hover:border-cyan-500/40 text-slate-200 text-xs font-mono font-medium flex items-center gap-1.5"
             >
               GitHub Code
+            </a>
+
+            <a 
+              *ngIf="selectedModalProject.videoDemoUrl"
+              [href]="selectedModalProject.videoDemoUrl" 
+              target="_blank" 
+              rel="noopener"
+              class="px-4 py-2 rounded-xl bg-red-950/90 hover:bg-red-900 border border-red-500/40 text-red-300 hover:text-red-200 font-bold text-xs font-mono flex items-center gap-1.5 shadow-sm"
+            >
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+              Watch Video Demo
             </a>
 
             <a 

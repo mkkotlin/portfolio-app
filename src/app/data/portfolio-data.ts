@@ -8,6 +8,7 @@ export interface Project {
   techStack: string[];
   githubUrl: string;
   liveDemoUrl?: string;
+  videoDemoUrl?: string;
   apiDocsUrl?: string;
   highlights: string[];
   architectureDiagram?: string;
@@ -118,6 +119,7 @@ export const PORTFOLIO_DATA = {
       description: 'An interactive drag-and-drop distributed system playground enabling developers to model microservice architectures (Clients, API Servers, Databases, Message Queues, Workers, Load Balancers) with real-time WebSocket state streaming.',
       techStack: ['Django', 'Django Channels', 'Angular', 'RxJS', 'Tailwind CSS', 'WebSockets', 'SVG'],
       githubUrl: 'https://github.com/mkkotlin/NodeLabCanvas',
+      videoDemoUrl: 'https://www.youtube.com/watch?v=r56pB8pnaAQ',
       highlights: [
         'Implemented dynamic SVG-based wire connections and drag-and-drop node positioning with automatic backend persistence using Django services.',
         'Engineered a Python simulation engine using Django Channels and WebSockets to stream real-time request routing, load balancing, and queue updates.',
@@ -139,6 +141,7 @@ export const PORTFOLIO_DATA = {
       techStack: ['Python', 'FastAPI', 'SQLAlchemy', 'PostgreSQL', 'Alembic', 'JWT', 'React', 'Axios'],
       githubUrl: 'https://github.com/mkkotlin/Ticketing-React',
       liveDemoUrl: 'https://rticketflow.vercel.app/',
+      videoDemoUrl: 'https://www.youtube.com/watch?v=RStdoM8-1E8',
       apiDocsUrl: 'https://backend-4617ffc5.fastapicloud.dev/docs',
       highlights: [
         'Built secure FastAPI REST APIs supporting granular RBAC (Customer, Agent, Admin) with password hashing (Bcrypt) and protected route middleware.',
@@ -156,6 +159,7 @@ export const PORTFOLIO_DATA = {
       description: 'Multi-user collaborative Kanban application supporting instantaneous task synchronization across multiple connected clients with drag-and-drop support.',
       techStack: ['Django', 'Django REST Framework', 'Django Channels', 'Angular', 'PostgreSQL', 'SQLite', 'WebSockets', 'Angular CDK'],
       githubUrl: 'https://github.com/mkkotlin/AsynColl',
+      videoDemoUrl: 'https://www.youtube.com/watch?v=HVXrbnWtyBs',
       highlights: [
         'Designed real-time WebSocket sync using Django Channels to broadcast task moves, card edits, and column reorders instantaneously.',
         'Implemented drag-and-drop card interaction using Angular CDK with multi-column constraint handling.',
@@ -172,6 +176,7 @@ export const PORTFOLIO_DATA = {
       description: 'Full-stack social networking platform equipped with Sentence-Transformer AI model for vector similarity content discovery and real-time activity feeds.',
       techStack: ['Django', 'Django REST Framework', 'PostgreSQL', 'Sentence-Transformers', 'Django Channels', 'Daphne', 'WebSockets', 'JavaScript'],
       githubUrl: 'https://github.com/mkkotlin/ConnectNest',
+      videoDemoUrl: 'https://www.youtube.com/watch?v=oDJvo0yghaE',
       highlights: [
         'Built an AI semantic search engine leveraging Sentence-Transformers (all-MiniLM-L6-v2) and cosine similarity for context-aware discovery.',
         'Optimized search latency by precomputing and persisting 384-dimensional vector embeddings in PostgreSQL, bypassing runtime inference overhead.',
@@ -188,6 +193,7 @@ export const PORTFOLIO_DATA = {
       description: 'An offline-first note-taking engine using browser IndexedDB for local zero-latency edits with automated background sync upon network restoration.',
       techStack: ['Django', 'Django REST Framework', 'Angular', 'Dexie.js', 'IndexedDB', 'RxJS'],
       githubUrl: 'https://github.com/mkkotlin/offline-first-notes-app',
+      videoDemoUrl: 'https://www.youtube.com/watch?v=mh2hXi35kiY',
       highlights: [
         'Utilized Dexie.js over IndexedDB to enable persistent client-side storage, allowing instant offline read/write operations.',
         'Engineered conflict-aware background synchronization algorithms that trigger seamlessly when network connectivity is re-established.',
