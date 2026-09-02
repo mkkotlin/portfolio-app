@@ -12,16 +12,23 @@ export default async function handler(req, res) {
     });
   }
 
-  const { user } = req.body || {};
+  const { user, type } = req.body || {};
+
+  const isResume = type === 'Resume Access';
+  const eventTitle = isResume ? '📄 Resume CV Accessed!' : '📱 Phone Number Revealed!';
+  const eventDescription = isResume
+    ? 'A visitor verified identity via Google OAuth to view/print your Resume CV on your portfolio.'
+    : 'A visitor verified identity via Google OAuth to view your phone number on your portfolio.';
+  const eventColor = isResume ? 3447003 : 3066993; // Cyan or Emerald
 
   const embedPayload = {
     username: 'Portfolio Security Audit',
     avatar_url: 'https://cdn-icons-png.flaticon.com/512/1041/1041916.png',
     embeds: [
       {
-        title: '📱 Phone Number Revealed!',
-        description: `A visitor verified identity via Google OAuth to view your phone number on your portfolio.`,
-        color: 3066993, // Emerald green
+        title: eventTitle,
+        description: eventDescription,
+        color: eventColor,
         thumbnail: user?.picture ? { url: user.picture } : undefined,
         fields: [
           { name: '👤 Verified Name', value: user?.name || 'Unknown', inline: true },

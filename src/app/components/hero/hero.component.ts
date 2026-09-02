@@ -53,37 +53,26 @@ import { PORTFOLIO_DATA } from '../../data/portfolio-data';
             </p>
 
             <!-- Action CTAs -->
-            <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3">
-              <a 
-                href="#contact" 
-                class="px-5 py-3.5 rounded-xl bg-emerald-950/90 hover:bg-emerald-900 text-emerald-300 font-bold text-sm border border-emerald-500/40 hover:border-emerald-400 transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/30 hover:scale-105 active:scale-95"
-              >
-                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                </svg>
-                <span>📞 Call / Contact</span>
-              </a>
-
+            <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3">
               <a 
                 href="#projects" 
-                class="px-5 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-cyan-500/25 flex items-center justify-center gap-2 hover:scale-105 active:scale-95"
+                class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-cyan-500/25 flex items-center justify-center gap-2 hover:scale-105 active:scale-95"
               >
-                <span>Explore Projects</span>
+                <span>Explore Featured Work</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>
               </a>
 
-              <a 
-                [href]="info.resumePdfUrl"
-                download="Mayank_Kumar_Resume.pdf"
-                class="px-5 py-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-cyan-300 font-semibold text-sm border border-cyan-500/30 transition-all flex items-center justify-center gap-2 hover:border-cyan-400 shadow-md hover:scale-105"
+              <button 
+                (click)="onOpenResume()"
+                class="px-5 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-slate-950 font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-md shadow-emerald-500/20 hover:scale-105 active:scale-95"
               >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                 </svg>
-                Download Resume
-              </a>
+                <span>View / Print Resume CV</span>
+              </button>
             </div>
 
             <!-- Social Media Quick Links -->

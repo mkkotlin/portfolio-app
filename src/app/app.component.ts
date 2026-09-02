@@ -42,3 +42,4 @@ export class AppComponent {
     this.isResumeModalOpen = false;
   }
 }
+
