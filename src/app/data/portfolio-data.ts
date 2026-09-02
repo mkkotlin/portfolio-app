@@ -62,7 +62,7 @@ export const PORTFOLIO_DATA = {
     role: 'Python Backend Developer',
     secondaryRoles: ['Full-Stack Engineer', 'Systems Engineer', 'API Architect'],
     tagline: 'Specialized in building high-concurrency REST APIs, WebSocket architectures, distributed system simulations & AI-powered backend workflows.',
-    location: 'Bengaluru / India 🇮🇳',
+    location: 'India 🇮🇳',
     email: 'mkkotlin@gmail.com',
     github: 'https://github.com/mkkotlin',
     linkedin: 'https://linkedin.com/in/mayank20py',
