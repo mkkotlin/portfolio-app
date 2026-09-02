@@ -168,6 +168,80 @@ export class ResumeModalComponent {
   }
 
   printResume() {
-    window.print();
+    const printElem = document.getElementById('printable-resume');
+    if (!printElem) return;
+
+    const iframe = document.createElement('iframe');
+    iframe.style.position = 'fixed';
+    iframe.style.right = '0';
+    iframe.style.bottom = '0';
+    iframe.style.width = '0';
+    iframe.style.height = '0';
+    iframe.style.border = '0';
+
+    document.body.appendChild(iframe);
+
+    const doc = iframe.contentWindow?.document;
+    if (!doc) return;
+
+    doc.open();
+    doc.write(`
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>Mayank Kumar - Resume CV</title>
+          <style>
+            @page { size: A4; margin: 12mm 15mm; }
+            body {
+              font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+              color: #0f172a;
+              background: #ffffff;
+              line-height: 1.4;
+              margin: 0;
+              padding: 0;
+            }
+            h1 { font-size: 22px; font-weight: 800; margin: 0 0 2px 0; color: #0f172a; }
+            h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #0284c7; margin: 14px 0 6px 0; font-weight: 700; border-bottom: 1px solid #cbd5e1; padding-bottom: 3px; }
+            h4 { font-size: 13px; font-weight: 700; color: #0f172a; margin: 0; }
+            p, li { font-size: 11px; color: #334155; margin: 2px 0; }
+            ul { padding-left: 14px; margin: 4px 0; }
+            a { color: #0284c7; text-decoration: none; }
+            .border-b { border-bottom: 1px solid #e2e8f0; }
+            .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .space-y-4 > * + * { margin-top: 8px; }
+            .space-y-6 > * + * { margin-top: 12px; }
+            .space-y-3 > * + * { margin-top: 6px; }
+            .p-3\.5, .p-3 { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 10px; }
+            .flex { display: flex; }
+            .flex-col { flex-direction: column; }
+            .flex-wrap { flex-wrap: wrap; }
+            .justify-between { justify-content: space-between; }
+            .items-center { align-items: center; }
+            .gap-1 { gap: 4px; }
+            .gap-3 { gap: 12px; }
+            .text-xs { font-size: 11px; }
+            .text-sm { font-size: 12px; }
+            .text-cyan-400, .text-cyan-300, .text-emerald-400, .text-emerald-300, .text-violet-400, .text-amber-400 { color: #0284c7 !important; }
+            .text-slate-300, .text-slate-400 { color: #475569 !important; }
+            .text-white { color: #0f172a !important; }
+            .bg-slate-900\/60, .bg-\[\#090d16\] { background: #f8fafc !important; }
+          </style>
+        </head>
+        <body>
+          ${printElem.innerHTML}
+        </body>
+      </html>
+    `);
+    doc.close();
+
+    setTimeout(() => {
+      iframe.contentWindow?.focus();
+      iframe.contentWindow?.print();
+      setTimeout(() => {
+        if (document.body.contains(iframe)) {
+          document.body.removeChild(iframe);
+        }
+      }, 1000);
+    }, 300);
   }
 }

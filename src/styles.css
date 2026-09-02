@@ -157,3 +157,61 @@ code, pre {
 .node-pulse {
   animation: pulseGlow 2s infinite ease-in-out;
 }
+
+/* PRINT STYLES - STRICT 1-PAGE RESUME ISOLATION */
+@media print {
+  /* Hide all elements on the entire page */
+  body * {
+    visibility: hidden !important;
+  }
+
+  /* Show only the printable resume card and its contents */
+  #printable-resume, #printable-resume * {
+    visibility: visible !important;
+  }
+
+  #printable-resume {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 24px !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  #printable-resume h1, 
+  #printable-resume h2, 
+  #printable-resume h3, 
+  #printable-resume h4, 
+  #printable-resume p, 
+  #printable-resume span, 
+  #printable-resume div, 
+  #printable-resume li, 
+  #printable-resume a {
+    color: #0f172a !important;
+    text-shadow: none !important;
+  }
+
+  #printable-resume .text-cyan-400,
+  #printable-resume .text-emerald-400,
+  #printable-resume .text-emerald-300,
+  #printable-resume .text-amber-400,
+  #printable-resume .text-violet-400 {
+    color: #0284c7 !important;
+  }
+
+  #printable-resume .bg-slate-900\/60,
+  #printable-resume .bg-\[\#090d16\] {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+
+  header, nav, button, footer {
+    display: none !important;
+  }
+}
