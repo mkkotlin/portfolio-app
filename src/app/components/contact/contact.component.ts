@@ -309,35 +309,14 @@ export class ContactComponent implements AfterViewInit {
   }
 
   private async sendDiscordWebhook(user: { name?: string; email?: string; picture?: string }) {
-    if (!this.info.discordWebhookUrl) return;
-
-    const embedPayload = {
-      username: 'Portfolio Security Audit',
-      avatar_url: 'https://cdn-icons-png.flaticon.com/512/1041/1041916.png',
-      embeds: [
-        {
-          title: '📱 Phone Number Revealed!',
-          description: `A visitor just verified their identity via Google OAuth to view your phone number on your portfolio.`,
-          color: 3066993, // Emerald green
-          thumbnail: user.picture ? { url: user.picture } : undefined,
-          fields: [
-            { name: '👤 Verified Name', value: user.name || 'Unknown', inline: true },
-            { name: '✉️ Verified Email', value: user.email || 'Unknown', inline: true },
-            { name: '🕒 Access Time', value: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }), inline: false }
-          ],
-          footer: { text: 'Identity Audit Trail • Anti-Spam Protection Active' }
-        }
-      ]
-    };
-
     try {
-      await fetch(this.info.discordWebhookUrl, {
+      await fetch('/api/notify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(embedPayload)
+        body: JSON.stringify({ user })
       });
     } catch (err) {
-      console.error('Failed to dispatch Discord Webhook notification:', err);
+      console.error('Failed to dispatch Discord alert via serverless function:', err);
     }
   }
 

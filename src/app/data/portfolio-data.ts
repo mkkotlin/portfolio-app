@@ -64,9 +64,8 @@ export const PORTFOLIO_DATA = {
     tagline: 'Specialized in building high-concurrency REST APIs, WebSocket architectures, distributed system simulations & AI-powered backend workflows.',
     location: 'India 🇮🇳',
     email: 'mkkotlin@gmail.com',
-    phoneEncoded: 'KzkxIDk4NzY1IDQzMjEw', // Replace with your Base64 encoded phone number or plaintext phone
+    phoneEncoded: 'KzkxIDg3NTc4MzYwMzY=',
     googleClientId: '53525565630-fh80agsign7gnvcd3ueq9lecmnrlkvmd.apps.googleusercontent.com',
-    discordWebhookUrl: 'https://discord.com/api/webhooks/1544639999277015050/qzlr8uMwIs6ZAyrd0etdMGHCzHH2MhiKax_QQGaRh6uffvB5BJX8fEoz48rg6aTaTEnb',
     github: 'https://github.com/mkkotlin',
     linkedin: 'https://linkedin.com/in/mayank20py',
     leetcode: 'https://leetcode.com/u/44_mayank/',
