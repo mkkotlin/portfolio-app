@@ -62,14 +62,26 @@ import { CommonModule } from '@angular/common';
           
           <a 
             href="#contact" 
-            class="px-4 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-medium text-xs border border-white/10 hover:border-cyan-500/40 transition-all flex items-center gap-1.5"
+            (click)="setActive('contact')"
+            class="px-4 py-2 rounded-xl bg-emerald-950/80 hover:bg-emerald-900 text-emerald-300 font-semibold text-xs border border-emerald-500/40 hover:border-emerald-400 transition-all flex items-center gap-1.5 shadow-sm shadow-emerald-900/30 hover:scale-105 active:scale-95"
           >
-            Contact
+            <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            <span>📞 Call / Contact</span>
           </a>
         </div>
 
-        <!-- Mobile Menu Trigger Button -->
+        <!-- Mobile Header Bar Triggers -->
         <div class="flex items-center gap-2 lg:hidden">
+          <a 
+            href="#contact" 
+            (click)="setActive('contact')"
+            class="px-2.5 py-1.5 rounded-lg bg-emerald-950/90 text-emerald-300 font-bold text-xs border border-emerald-500/40 flex items-center gap-1 shadow-sm"
+          >
+            <span>📞 Call</span>
+          </a>
+
           <button 
             (click)="onOpenResume()"
             class="px-3 py-1.5 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-bold text-xs flex items-center gap-1 shadow-sm"
@@ -113,6 +125,14 @@ import { CommonModule } from '@angular/common';
         </a>
 
         <div class="pt-3 border-t border-white/10 mt-2 flex flex-col gap-2">
+          <a 
+            href="#contact"
+            (click)="mobileMenuOpen = false; setActive('contact')"
+            class="w-full py-3 rounded-xl bg-emerald-950/90 text-emerald-300 border border-emerald-500/40 font-bold text-sm text-center flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/30"
+          >
+            <span>📞 Call / Contact Phone</span>
+          </a>
+
           <button 
             (click)="onOpenResume(); mobileMenuOpen = false"
             class="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-bold text-sm text-center flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20"
